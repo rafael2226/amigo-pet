@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Amigo Pet</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+        <link href="./output.css" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap');
+        </style>
+    </head>
+<body class="bg-gray-400 text-gray-900 font-roboto">
+    <div class="container mx-auto p-2">
+
+        <header class="bg-black text-white p-6 rounded flex items-center justify-between h-20">
+            <div class="flex items-center">
+                <img src="img/logo.png" alt="Logo" class="h-12 w-12 rounded-full mr-4 object-cover">
+            </div>
+            <nav class="flex space-x-4">
+            <a href="index.html" class="hover:underline transition duration-300 ease-in-out transform hover:scale-110">Home</a>    
+            <a href="sobre.html" class="hover:underline transition duration-300 ease-in-out transform hover:scale-110">Sobre</a>
+            <a href="pets.html" class="hover:underline transition duration-300 ease-in-out transform hover:scale-110">Pets</a>
+            <a href="contato.html" class="hover:underline transition duration-300 ease-in-out transform hover:scale-110">Contato</a>
+            </nav>
+        </header>
+
+        <div class="bg-white p-2 shadow mt-8">
+            <div class="relative w-full h-64 overflow-hidden">
+                <div class="carousel">
+                    <div class="carousel-inner relative overflow-hidden w-full h-full">
+                        <div class="carousel-item active relative float-left w-full h-full">
+                            <img src="img/carousel1.jpg" class="block w-full h-full object-cover" alt="Slide 1">
+                        </div>
+                        <div class="carousel-item relative float-left w-full h-full">
+                            <img src="img/carousel2.jpg" class="block w-full h-full object-cover" alt="Slide 2">
+                        </div>
+                        <div class="carousel-item relative float-left w-full h-full">
+                            <img src="img/carousel3.png" class="block w-full h-full object-cover" alt="Slide 3">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+        
+   
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000);
+    </script>
+
+    <style>
+        .carousel-item {
+            display: none;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+    </style>
+          
+            
+        
+        <footer class="bg-black text-white p-2 rounded mt-2">
+            <p>&copy; 2025 Amigo Pet. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
